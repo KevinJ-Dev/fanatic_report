@@ -1,3 +1,15 @@
+:root {
+  --color-text: #ffffff;
+  --color-background: #ff8b07;
+  --color-outline: #e66b07;
+  --color-shadow: #00000080;
+  --background: #0F0F0F;
+  
+  --color-anim: #fff;
+  --shadow-input: #ff8b07;
+  --font: 'Poppins', sans-serif;
+}
+
 * {
 	margin: 0px; 
 	padding: 0px; 
@@ -7,6 +19,10 @@
 body, html {
 	height: 100%;
 }
+
+/* .appair {
+  display: none;
+} */
 
 .report {
   width: 100%;
@@ -31,7 +47,7 @@ body, html {
 
 .container-report {
   width: 1163px;
-  background: #0F0F0F;
+  background: var(--background);
   border-radius: 10px;
   overflow: hidden;
   display: -webkit-box;
@@ -58,11 +74,11 @@ body, html {
 }
 
 .report-form-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font);
   display: block;
   font-weight: bold;
   font-size: 2rem;
-  color: #fff;
+  color: var(--color-text);
 
   /* background: #FF8B07;
   background: linear-gradient(to right, #FF8B07 0%, #c04509 50%, #223845 98%);
@@ -81,14 +97,10 @@ input.input1 {
 }
 
 select.input1 {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font);
   height: 50px;
   border-radius: 25px;
   padding: 0 30px;
-}
-
-select.input1 .test {
-  background-color: red;
 }
 
 input.input1 + .shadow-input1 {
@@ -114,10 +126,8 @@ textarea.input1 + .shadow-input1 {
 .input1 {
   display: block;
   width: 100%;
-  background: #e6e6e6;
   font-size: 15px;
   line-height: 1.5;
-  color: #666666;
 }
 
 .shadow-input1 {
@@ -130,7 +140,7 @@ textarea.input1 + .shadow-input1 {
   width: 100%;
   height: 100%;
   box-shadow: 0px 0px 0px 0px;
-  color: #ff8b07;
+  color: var(--shadow-input);
 }
 
 .input1:focus + .shadow-input1 {
@@ -152,13 +162,10 @@ textarea.input1 + .shadow-input1 {
   }
 }
 
+/* Button */
 .btn-conteiner {
   display: flex;
   justify-content: center;
-  --color-text: #ffffff;
-  --color-background: #ff8b07;
-  --color-outline: #e66b07;
-  --color-shadow: #00000080;
 }
 
 .btn-content {
@@ -166,7 +173,7 @@ textarea.input1 + .shadow-input1 {
   align-items: center;
   padding: 5px 30px;
   text-decoration: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font);
   font-weight: 600;
   font-size: 2rem;
   color: var(--color-text);
@@ -231,7 +238,7 @@ textarea.input1 + .shadow-input1 {
 /* SVG animations */
 @keyframes color_anim {
   0% {
-    fill: white;
+    fill: var(--color-anim);
   }
 
   50% {
@@ -239,7 +246,7 @@ textarea.input1 + .shadow-input1 {
   }
 
   100% {
-    fill: white;
+    fill: var(--color-anim);
   }
 }
 
@@ -258,7 +265,7 @@ textarea.input1 + .shadow-input1 {
   }
 }
 
-/*[ Responsive ]*/
+/* Responsive */
 
 @media (max-width: 1200px) {
   .report-pic {
@@ -303,3 +310,5 @@ textarea.input1 + .shadow-input1 {
     padding: 90px 15px 88px 15px;
   }
 }
+
+/* Dropmenu  */
