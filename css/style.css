@@ -8,6 +8,9 @@
   --color-anim: #fff;
   --shadow-input: #ff8b07;
   --font: 'Poppins', sans-serif;
+
+  --button-size: 40px;
+  --close-width: ($button-size / 10);
 }
 
 * {
@@ -28,12 +31,6 @@ body, html {
   width: 100%;
   min-height: 100%;
   padding: 15px;
-
-  /* background: #009bff;
-  background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
-  background: -o-linear-gradient(left, #0072ff, #00c6ff);
-  background: -moz-linear-gradient(left, #0072ff, #00c6ff);
-  background: linear-gradient(left, #0072ff, #00c6ff); */
 
   display: -webkit-box;
   display: -webkit-flex;
@@ -79,11 +76,6 @@ body, html {
   font-weight: bold;
   font-size: 2rem;
   color: var(--color-text);
-
-  /* background: #FF8B07;
-  background: linear-gradient(to right, #FF8B07 0%, #c04509 50%, #223845 98%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
 
   line-height: 1.2;
   text-align: center;
@@ -209,6 +201,8 @@ textarea.input1 + .shadow-input1 {
   position: relative;
   top: 6%;
 }
+
+/* Close btn */
   
 /* SVG */
 #arrow-icon-one {

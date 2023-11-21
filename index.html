@@ -20,6 +20,7 @@
           <span class="report-form-title">
             Demande de report
           </span>
+
   
           <div class="wrap-input1 validate-input" data-validate = "Titre du report manquant">
             <!-- <input class="input1" type="text" name="title" placeholder="Titre du report"> -->
@@ -29,11 +30,11 @@
   
           <div class="wrap-input1 validate-input">
             <label>
-              <select class="input1" name='options'>
-                  <option value='option-1'>REPORT</option>
-                  <option value='option-2'>QUESTION</option>
-                  <option value='option-3'>BUG</option>
-              </select>
+              <select class="input1" name='options'  onchange="TypesChange(this.value)">
+                <option value='Report'>REPORT</option>
+                <option value='Question'>QUESTION</option>
+                <option value='Bug'>BUG</option>
+            </select>
             </label>
           </div>
   
