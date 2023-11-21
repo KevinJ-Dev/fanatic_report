@@ -37,9 +37,6 @@ body, html {
 
 .menu-item {
   margin-right: 20px;
-}
-
-.menu-item a {
   text-decoration: none;
   color: var(--color-text);
   font-family: var(--font);
@@ -47,6 +44,20 @@ body, html {
   font-size: 1.2rem;
   transition: color 0.3s;
 }
+
+.menu-item:hover {
+  color: var(--color-outline);
+  cursor: pointer;
+}
+
+/* .menu-item a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-family: var(--font);
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+} */
 
 .menu-item a:hover {
   color: var(--color-outline);
@@ -188,7 +199,7 @@ textarea.input1 + .shadow-input1 {
 .btn-content {
   display: flex;
   align-items: center;
-  padding: 5px 30px;
+  padding: 5px 6.5rem;
   text-decoration: none;
   font-family: var(--font);
   font-weight: 600;
