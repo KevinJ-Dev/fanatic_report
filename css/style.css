@@ -8,9 +8,6 @@
   --color-anim: #fff;
   --shadow-input: #ff8b07;
   --font: 'Poppins', sans-serif;
-
-  --button-size: 40px;
-  --close-width: ($button-size / 10);
 }
 
 * {
@@ -26,6 +23,33 @@ body, html {
 /* .appair {
   display: none;
 } */
+
+.header {
+  position: relative;
+  top: -2rem;
+  width: 100%;
+}
+
+.header-menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu-item {
+  margin-right: 20px;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.menu-item a:hover {
+  color: var(--color-outline);
+}
 
 .report {
   width: 100%;
@@ -155,7 +179,7 @@ textarea.input1 + .shadow-input1 {
 }
 
 /* Button */
-.btn-conteiner {
+.btn-container {
   display: flex;
   justify-content: center;
 }
