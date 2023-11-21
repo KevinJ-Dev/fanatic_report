@@ -42,6 +42,7 @@ body, html {
 .menu-item a {
   text-decoration: none;
   color: var(--color-text);
+  font-family: var(--font);
   font-weight: bold;
   font-size: 1.2rem;
   transition: color 0.3s;
