@@ -3,6 +3,7 @@ var reporttitle = "";
 var typesreport = "Report";
 var ReportListEmpty = true;
 var MyReportEmpty = true;
+var Report = [];
 function DisplayReport(bool) {
     if (bool) {
         $('body').show(5);
@@ -115,13 +116,31 @@ function OpenListReportNothing() {
     ShowMyReport(false);
     ShowNothingReportAll(true);
 }
+function DeleteReport(reportId) {
+    const index = Report.findIndex(report => report.id === reportId);
 
+    if (index !== -1) {
+        Report.splice(index, 1);
+
+        $(`#reportListStaff tbody:eq(${index})`).remove();
+        $.post(`https://${GetParentResourceName()}/DeleteReport`, JSON.stringify({
+            reportId: reportId
+        }));
+        if (Report.length === 0) {
+            ReportListEmpty = true;
+            OpenListReportNothing();
+        }
+    } else {
+        console.log(`Aucun rapport trouvé avec l'ID : ${reportId}`);
+    }
+}
 $(document).ready(function() {
     console.log("Loaded Report 2.0");
     
     window.addEventListener("message", function(event) {
         console.log(JSON.stringify(event.data.Report));
         if (event.data.type == "openReport") {
+            Report = event.data.Report;
             SetNewReportList(event.data.Report);
             SetMyReportList(event.data.Report, event.data.identifier);
             TcheckIsStaffInitMenu(event.data.isStaff);
@@ -187,39 +206,40 @@ $(document).ready(function() {
             Report.sort(function(a, b) {
                 return a.id - b.id;
             });
-            $('#reportListStaff').empty().append(`      <thead>
-            <tr>
-              <th>ID</th>
-              <th>TITRE</th>
-              <th>TYPE</th>
-              <th>STATUS</th>
-              <th>NOM</th>
-              <th>TEMPS</th>
-              <th>VOIR</th>
-              <th>SUPPRIMER</th>
-            </tr>
-          </thead>`)
+            $('#reportListStaff').empty().append(`
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>TITRE</th>
+                        <th>TYPE</th>
+                        <th>STATUS</th>
+                        <th>NOM</th>
+                        <th>TEMPS</th>
+                        <th>VOIR</th>
+                        <th>SUPPRIMER</th>
+                    </tr>
+                </thead>`);
+            
             for (let i = 0; i < Report.length; i++) {
-                
-                $('#reportListStaff').append(`<tbody>
-                <tr>
-                  <td>${Report[i].id}</td>
-                  <td>${Report[i].reporttitle}</td>
-                  <td>${Report[i].types}</td>
-                  <td>${Report[i].status}</td>
-                  <td>${Report[i].name}</td>
-                  <td>${Report[i].time}</td>
-                  <td><i class="fa-solid fa-eye eyes"></i></td>
-                  <td><button class="delete-button">Supprimer</button></td>
-                </tr>
-              </tbody>`)
+                $('#reportListStaff').append(`
+                    <tbody>
+                        <tr>
+                            <td>${Report[i].id}</td>
+                            <td>${Report[i].reporttitle}</td>
+                            <td>${Report[i].types}</td>
+                            <td>${Report[i].status}</td>
+                            <td>${Report[i].name}</td>
+                            <td>${Report[i].time}</td>
+                            <td><i class="fa-solid fa-eye eyes"></i></td>
+                            <td><button class="delete-button" onclick="DeleteReport(${Report[i].id})">Supprimer</button></td>
+                        </tr>
+                    </tbody>`);
             }
         } else {
             ReportListEmpty = true;
-            OpenListReportNothing()
+            OpenListReportNothing();
         }
     }
-
     document.onkeydown = function(evt) {
         evt = evt || window.event;
         var isEscape = false;
