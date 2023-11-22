@@ -2,6 +2,7 @@ var reportmsg = "";
 var reporttitle = "";
 var typesreport = "Report";
 var ReportListEmpty = true;
+var MyReportEmpty = true;
 function DisplayReport(bool) {
     if (bool) {
         $('body').show(5);
@@ -121,27 +122,36 @@ $(document).ready(function() {
     window.addEventListener("message", function(event) {
         console.log(JSON.stringify(event.data.Report));
         if (event.data.type == "openReport") {
-            TcheckIsStaffInitMenu(event.data.isStaff);
-            DisplayReport(true);
             SetNewReportList(event.data.Report);
             SetMyReportList(event.data.Report, event.data.identifier);
+            TcheckIsStaffInitMenu(event.data.isStaff);
+            DisplayReport(true);
         }
     });
 
     function TcheckIsStaffInitMenu(isStaff) {
-        if (isStaff) {
-            $('.header-menu').empty().append(`             <div class="menu-item" onclick="OpenMyReport()"><i class="fa-solid fa-ticket" style="color: #ff0000;"></i> MES REPPORTS</div>
+        if (isStaff && MyReportEmpty) {
+            console.log("Staff and empty")
+            $('.header-menu').empty().append(`
             <div class="menu-item" onclick="OpenRequestReport()"><i class="fa-solid fa-circle-plus" style="color: #ff0000;" ></i> DEMANDE REPPORT</div>
             <div class="menu-item" onclick="OpenListReport()"><i class="fa-solid fa-bell" style="color: #ff0000;" ></i> LISTE REPPORTS</div>`)
-        } else {
-            $('.header-menu').empty().append(`<div class="menu-item" onclick="OpenMyReport()"><i class="fa-solid fa-ticket" style="color: #ff0000;"></i> MES REPPORTS</div>
+        } else if (isStaff && !MyReportEmpty) {
+            $('.header-menu').empty().append(` <div class="menu-item" onclick="OpenMyReport()"><i class="fa-solid fa-ticket" style="color: #ff0000;"></i> MES REPPORTS</div>
+            <div class="menu-item" onclick="OpenRequestReport()"><i class="fa-solid fa-circle-plus" style="color: #ff0000;" ></i> DEMANDE REPPORT</div>
+            <div class="menu-item" onclick="OpenListReport()"><i class="fa-solid fa-bell" style="color: #ff0000;" ></i> LISTE REPPORTS</div>`)
+        }
+        if (!isStaff && MyReportEmpty) {
+            $('.header-menu').empty().append(`
+            <div class="menu-item" onclick="OpenRequestReport()"><i class="fa-solid fa-circle-plus" style="color: #ff0000;" ></i> DEMANDE REPPORT</div>`)
+        } else if (!isStaff && !MyReportEmpty) {
+            $('.header-menu').empty().append(` <div class="menu-item" onclick="OpenMyReport()"><i class="fa-solid fa-ticket" style="color: #ff0000;"></i> MES REPPORTS</div>
             <div class="menu-item" onclick="OpenRequestReport()"><i class="fa-solid fa-circle-plus" style="color: #ff0000;" ></i> DEMANDE REPPORT</div>`)
         }
     }
 
     function SetMyReportList(MyReport, identity) {
-        var CountReport = 0;
         if (MyReport.length > 0) {
+            MyReportEmpty = false;
             MyReport.sort(function(a, b) {
                 return a.id - b.id;
             });
@@ -156,7 +166,6 @@ $(document).ready(function() {
             </thead>`)
             for (let i=0; i < MyReport.length; i++) {
                 if (MyReport[i].identifier == identity) {
-                    CountReport = CountReport + 1;
                     $('#myReportList').append(`<tbody>
                     <tr>
                       <td>${MyReport[i].reporttitle}</td>
@@ -168,9 +177,8 @@ $(document).ready(function() {
                   </tbody>`)
                 }
             }
-            if (CountReport == 0) {
-               
-            }
+        } else {
+            MyReportEmpty = true;
         }
     }
     function SetNewReportList(Report) {
@@ -192,7 +200,7 @@ $(document).ready(function() {
             </tr>
           </thead>`)
             for (let i = 0; i < Report.length; i++) {
-                console.log(Report[i].id)
+                
                 $('#reportListStaff').append(`<tbody>
                 <tr>
                   <td>${Report[i].id}</td>
