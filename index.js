@@ -4,6 +4,7 @@ var typesreport = "Report";
 var ReportListEmpty = true;
 var MyReportEmpty = true;
 var Report = [];
+
 function DisplayReport(bool) {
     if (bool) {
         $('body').show(5);
