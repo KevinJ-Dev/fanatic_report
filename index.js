@@ -38,6 +38,10 @@ function SendReport() {
             title: reporttitle,
             types: typesreport
         }));
+            var messagearea = document.getElementById("textreport");
+            messagearea.value = "";
+            var titlearea = document.getElementById("reporttitle");
+            titlearea.value = "";
             reportmsg = "";
             reporttitle = "";
             typesreport = "Report";
@@ -118,14 +122,20 @@ function OpenListReportNothing() {
     ShowNothingReportAll(true);
 }
 function DeleteReport(reportId) {
+    var identifierplayer = "";
     const index = Report.findIndex(report => report.id === reportId);
-
+    for (let i = 0; i < Report.length; i++) {
+        console.log(Report[i].id)
+        if (Report[i].id == reportId) {
+            identifierplayer = Report[i].identifier;
+        }
+    }
     if (index !== -1) {
         Report.splice(index, 1);
-
         $(`#reportListStaff tbody:eq(${index})`).remove();
         $.post(`https://${GetParentResourceName()}/DeleteReport`, JSON.stringify({
-            reportId: reportId
+            reportId: reportId,
+            identifier: identifierplayer
         }));
         if (Report.length === 0) {
             ReportListEmpty = true;
@@ -146,6 +156,9 @@ $(document).ready(function() {
             SetMyReportList(event.data.Report, event.data.identifier);
             TcheckIsStaffInitMenu(event.data.isStaff);
             DisplayReport(true);
+        }
+        if (event.data.type == "closeReport") {
+            DisplayReport(false);
         }
     });
 
