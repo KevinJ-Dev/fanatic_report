@@ -65,6 +65,7 @@ function DisplayCreateReport(bool) {
         $('.container-report').show(5)
         ShowAllReport(false);
         ShowMyReport(false);
+        ShowNothingReportAll(false);
      } else {
         $('.container-report').hide()
      }
@@ -123,6 +124,7 @@ $(document).ready(function() {
             TcheckIsStaffInitMenu(event.data.isStaff);
             DisplayReport(true);
             SetNewReportList(event.data.Report);
+            SetMyReportList(event.data.Report, event.data.identifier);
         }
     });
 
@@ -137,6 +139,40 @@ $(document).ready(function() {
         }
     }
 
+    function SetMyReportList(MyReport, identity) {
+        var CountReport = 0;
+        if (MyReport.length > 0) {
+            MyReport.sort(function(a, b) {
+                return a.id - b.id;
+            });
+            $('#myReportList').empty().append(`<thead>
+            <tr>
+              <th>TITRE</th>
+              <th>TYPE</th>
+              <th>STATUS</th>
+              <th>TEMPS</th>
+              <th>VOIR</th>
+            </tr>
+            </thead>`)
+            for (let i=0; i < MyReport.length; i++) {
+                if (MyReport[i].identifier == identity) {
+                    CountReport = CountReport + 1;
+                    $('#myReportList').append(`<tbody>
+                    <tr>
+                      <td>${MyReport[i].reporttitle}</td>
+                      <td>${MyReport[i].types}</td>
+                      <td>${MyReport[i].status}</td>
+                      <td>${MyReport[i].time}</td>
+                      <td><i class="fa-solid fa-eye eyes"></i></td>
+                    </tr>
+                  </tbody>`)
+                }
+            }
+            if (CountReport == 0) {
+               
+            }
+        }
+    }
     function SetNewReportList(Report) {
         if (Report.length > 0) {
             ReportListEmpty = false;
