@@ -129,6 +129,43 @@ body, html {
   padding: 90px 130px 88px 148px;
 }
 
+.container-listreport-nothing {
+  max-width: 1163px;
+  max-height: 800px;
+  width: 100%;
+  background: var(--background);
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 90px 130px 88px 148px;
+}
+
+.container-listreport-nothing .nothing{
+  font-family: var(--font);
+  font-weight: bold;
+  color: var(--color-text);
+  text-align: center;
+  font-size: 1.5rem;
+  width: 100%;
+  /* position: relative; */
+  /* top: -2rem; */
+}
+
+.container-mereport {
+  max-width: 1163px;
+  max-height: 800px;
+  width: 100%;
+  background: var(--background);
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 90px 130px 88px 148px;
+}
+
 .report-pic {
   width: 296px;
 }

@@ -81,9 +81,24 @@
      </header>
     </div>
 
+    <!-- Liste report nothing-->
+    <!-- style="display: none;" -->
+    <div class="container-listreport-nothing" style="display: none;">
+      <header class="header">
+        <div class="header-menu">
+            <div class="menu-item" onclick="OpenMyReport()"><i class="fa-solid fa-ticket" style="color: #ff0000;"></i> MES REPPORTS</div>
+            <div class="menu-item" onclick="OpenRequestReport()"><i class="fa-solid fa-circle-plus" style="color: #ff0000;" ></i> DEMANDE REPPORT</div>
+           <div class="menu-item" onclick="OpenListReport()"><i class="fa-solid fa-bell" style="color: #ff0000;" ></i> LISTE REPPORTS</div>
+        </div>
+      </header>
+      <div class="nothing">
+       <p>Pas de report en cour...</p>
+      </div>
+      </div>
+
     <!-- Liste report -->
     <!-- style="display: none;" -->
-    <div class="container-listreport">
+    <div class="container-listreport" style="display: none;">
       <header class="header">
         <div class="header-menu">
             <div class="menu-item" onclick="OpenMyReport()"><i class="fa-solid fa-ticket" style="color: #ff0000;"></i> MES REPPORTS</div>
@@ -157,18 +172,69 @@
         </tr>
       </tbody>
 
-      <!-- <tbody>
+    </table>
+    </div>
+
+    <!-- Liste me report -->
+    <!-- style="display: none;" -->
+    <div class="container-mereport">
+      <header class="header">
+        <div class="header-menu">
+            <div class="menu-item" onclick="OpenMyReport()"><i class="fa-solid fa-ticket" style="color: #ff0000;"></i> MES REPPORTS</div>
+            <div class="menu-item" onclick="OpenRequestReport()"><i class="fa-solid fa-circle-plus" style="color: #ff0000;" ></i> DEMANDE REPPORT</div>
+           <div class="menu-item" onclick="OpenListReport()"><i class="fa-solid fa-bell" style="color: #ff0000;" ></i> LISTE REPPORTS</div>
+        </div>
+     </header>
+
+     <table>
+      <thead>
         <tr>
-          <td>1</td>
+          <th>TITRE</th>
+          <th>TYPE</th>
+          <th>STATUS</th>
+          <th>TEMPS</th>
+          <th>VOIR</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
           <td>Titre 1</td>
           <td>Type A</td>
           <td>En cours</td>
-          <td>John Doe</td>
           <td>12:00 PM</td>
           <td><i class="fa-solid fa-eye eyes"></i></td>
-          <td><button class="delete-button">Supprimer</button></td>
         </tr>
-      </tbody> -->
+      </tbody>
+
+      <tbody>
+        <tr>
+          <td>Titre 1</td>
+          <td>Type A</td>
+          <td>En cours</td>
+          <td>12:00 PM</td>
+          <td><i class="fa-solid fa-eye eyes"></i></td>
+        </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <td>Titre 1</td>
+          <td>Type A</td>
+          <td>En cours</td>
+          <td>12:00 PM</td>
+          <td><i class="fa-solid fa-eye eyes"></i></td>
+        </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <td>Titre 1</td>
+          <td>Type A</td>
+          <td>En cours</td>
+          <td>12:00 PM</td>
+          <td><i class="fa-solid fa-eye eyes"></i></td>
+        </tr>
+      </tbody>
 
     </table>
     </div>
