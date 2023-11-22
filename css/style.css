@@ -94,6 +94,41 @@ body, html {
   padding: 90px 130px 88px 148px;
 }
 
+.container-merreport {
+  width: 1163px;
+  background: var(--background);
+  border-radius: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 90px 130px 88px 148px;
+}
+
+.container-listreport {
+  /* width: 1163px; */
+  max-width: 1163px;
+  max-height: 800px;
+  width: 100%;
+  background: var(--background);
+  border-radius: 10px;
+  /* overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 90px 130px 88px 148px;
+}
+
 .report-pic {
   width: 296px;
 }
@@ -296,7 +331,6 @@ textarea.input1 + .shadow-input1 {
 }
 
 /* Responsive */
-
 @media (max-width: 1200px) {
   .report-pic {
     width: 33.5%;
@@ -341,4 +375,57 @@ textarea.input1 + .shadow-input1 {
   }
 }
 
-/* Dropmenu  */
+/* Me Report */
+table {
+  /* background-color: red; */
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  /* border: 1px solid #ddd; */
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #ff8b07;
+  color: #fff;
+  font-family: var(--font);
+}
+
+tr:hover {
+  background-color: #292929;
+}
+
+td {
+  font-family: var(--font);
+  color: #fff;
+}
+
+.eyes {
+  color: rgb(190, 190, 190);
+  cursor: pointer;
+}
+
+.eyes:hover {
+  color: rgb(109, 109, 109);
+  cursor: pointer;
+}
+
+.delete-button {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #6b0000;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}

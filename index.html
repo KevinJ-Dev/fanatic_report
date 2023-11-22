@@ -12,17 +12,16 @@
    </head>
 <body class="appair">
 	<div class="report">
+    <!-- Report -->
     <!-- style="display: none;" -->
-		<div class="container-report">
+		<div class="container-report" style="display: none;">
 
        <header class="header">
           <div class="header-menu">
-             <div class="menu-item" onclick="OpenMyReport()"><i class="fa-solid fa-ticket" style="color: #ff0000;"></i> TES REPPORTS</div>
+             <div class="menu-item" onclick="OpenMyReport()"><i class="fa-solid fa-ticket" style="color: #ff0000;"></i> MES REPPORTS</div>
              <div class="menu-item" onclick="OpenListReport()"><i class="fa-solid fa-bell" style="color: #ff0000;" ></i> LISTE REPPORTS</div>
           </div>
        </header>
-
-
 
 			<div class="report-pic js-tilt" data-tilt>
 				<img src="images/logo.png" alt="logo_fanatic">
@@ -70,16 +69,109 @@
         
 			</form>
 		</div>
+    <!-- Mes report -->
+    <!-- style="display: none;" -->
     <div class="container-merreport" style="display: none;">
       <header class="header">
         <div class="header-menu">
-            <div class="menu-item"><a href="mereport.html"><i class="fa-solid fa-ticket" style="color: #ff0000;"></i> TES REPPORTS</a></div>
-            <div class="menu-item"><a href="index.html"><i class="fa-solid fa-circle-plus" style="color: #ff0000;" ></i> DEMANDE REPPORT</a></div>
-           <div class="menu-item"><a href="listreport.html"><i class="fa-solid fa-bell" style="color: #ff0000;" ></i> LISTE REPPORTS</a></div>
+            <div class="menu-item" onclick="OpenMyReport()"><i class="fa-solid fa-ticket" style="color: #ff0000;"></i> MES REPPORTS</div>
+            <div class="menu-item" onclick="OpenRequestReport()"><i class="fa-solid fa-circle-plus" style="color: #ff0000;" ></i> DEMANDE REPPORT</div>
+           <div class="menu-item" onclick="OpenListReport()"><i class="fa-solid fa-bell" style="color: #ff0000;" ></i> LISTE REPPORTS</div>
         </div>
      </header>
     </div>
-	</div>
+
+    <!-- Liste report -->
+    <!-- style="display: none;" -->
+    <div class="container-listreport">
+      <header class="header">
+        <div class="header-menu">
+            <div class="menu-item" onclick="OpenMyReport()"><i class="fa-solid fa-ticket" style="color: #ff0000;"></i> MES REPPORTS</div>
+            <div class="menu-item" onclick="OpenRequestReport()"><i class="fa-solid fa-circle-plus" style="color: #ff0000;" ></i> DEMANDE REPPORT</div>
+           <div class="menu-item" onclick="OpenListReport()"><i class="fa-solid fa-bell" style="color: #ff0000;" ></i> LISTE REPPORTS</div>
+        </div>
+     </header>
+
+     <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>TITRE</th>
+          <th>TYPE</th>
+          <th>STATUS</th>
+          <th>NOM</th>
+          <th>TEMPS</th>
+          <th>VOIR</th>
+          <th>SUPPRIMER</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Titre 1</td>
+          <td>Type A</td>
+          <td>En cours</td>
+          <td>John Doe</td>
+          <td>12:00 PM</td>
+          <td><i class="fa-solid fa-eye eyes"></i></td>
+          <td><button class="delete-button">Supprimer</button></td>
+        </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Titre 1</td>
+          <td>Type A</td>
+          <td>En cours</td>
+          <td>John Doe</td>
+          <td>12:00 PM</td>
+          <td><i class="fa-solid fa-eye eyes"></i></td>
+          <td><button class="delete-button">Supprimer</button></td>
+        </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Titre 1</td>
+          <td>Type A</td>
+          <td>En cours</td>
+          <td>John Doe</td>
+          <td>12:00 PM</td>
+          <td><i class="fa-solid fa-eye eyes"></i></td>
+          <td><button class="delete-button">Supprimer</button></td>
+        </tr>
+      </tbody>
+
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Titre 1</td>
+          <td>Type A</td>
+          <td>En cours</td>
+          <td>John Doe</td>
+          <td>12:00 PM</td>
+          <td><i class="fa-solid fa-eye eyes"></i></td>
+          <td><button class="delete-button">Supprimer</button></td>
+        </tr>
+      </tbody>
+
+      <!-- <tbody>
+        <tr>
+          <td>1</td>
+          <td>Titre 1</td>
+          <td>Type A</td>
+          <td>En cours</td>
+          <td>John Doe</td>
+          <td>12:00 PM</td>
+          <td><i class="fa-solid fa-eye eyes"></i></td>
+          <td><button class="delete-button">Supprimer</button></td>
+        </tr>
+      </tbody> -->
+
+    </table>
+    </div>
 
 </body>
 </html>
