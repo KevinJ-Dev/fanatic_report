@@ -69,17 +69,6 @@
         
 			</form>
 		</div>
-    <!-- Mes report -->
-    <!-- style="display: none;" -->
-    <div class="container-merreport" style="display: none;">
-      <header class="header">
-        <div class="header-menu">
-            <div class="menu-item" onclick="OpenMyReport()"><i class="fa-solid fa-ticket" style="color: #ff0000;"></i> MES REPPORTS</div>
-            <div class="menu-item" onclick="OpenRequestReport()"><i class="fa-solid fa-circle-plus" style="color: #ff0000;" ></i> DEMANDE REPPORT</div>
-           <div class="menu-item" onclick="OpenListReport()"><i class="fa-solid fa-bell" style="color: #ff0000;" ></i> LISTE REPPORTS</div>
-        </div>
-     </header>
-    </div>
 
     <!-- Liste report nothing-->
     <!-- style="display: none;" -->
@@ -177,7 +166,7 @@
 
     <!-- Liste me report -->
     <!-- style="display: none;" -->
-    <div class="container-mereport">
+    <div class="container-mereport" style="display: none;">
       <header class="header">
         <div class="header-menu">
             <div class="menu-item" onclick="OpenMyReport()"><i class="fa-solid fa-ticket" style="color: #ff0000;"></i> MES REPPORTS</div>
@@ -237,6 +226,150 @@
       </tbody>
 
     </table>
+    </div>
+
+    <!-- Liste view report -->
+    <!-- style="display: none;" -->
+    <div class="container-viewreport">
+      <header class="header">
+        <div class="header-menu">
+            <div class="menu-item" onclick="OpenMyReport()"><i class="fa-solid fa-ticket" style="color: #ff0000;"></i> MES REPPORTS</div>
+            <div class="menu-item" onclick="OpenRequestReport()"><i class="fa-solid fa-circle-plus" style="color: #ff0000;" ></i> DEMANDE REPPORT</div>
+           <div class="menu-item" onclick="OpenListReport()"><i class="fa-solid fa-bell" style="color: #ff0000;" ></i> LISTE REPPORTS</div>
+        </div>
+     </header>
+     <div id="view-report" style="display:block;">
+      <div id="subtext">
+      </div>
+      
+      <div class="left-side">
+        <table>
+        <tr>
+          <!-- <td><img id="user-profile-img" src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/1768020/fc52e0d76e08ca662d3f5cae9de01fc6ecce8e1e.gif"/></td> -->
+          <td>
+            <div id="user-steamname"><i class="fas fa-user-circle"></i> Wiraf</div>
+            <div id="user-steam"><i class="fab fa-steam"></i> 345936137451339776</div>
+            <div id="user-discord"><i class="fab fa-discord"></i> 345936137451339776</div>
+            <div id="report-status">
+              Change Status
+              <span style="color:rgba(255,200,50,1);"><i class="fal fa-hourglass-half"></i> Waiting</span>
+              
+              <div id="report-status-values">
+                <button><span style="color:rgba(255,200,50,1);"><i class="fal fa-hourglass-half"></i> Waiting</span></button>
+                <button><span style="color:rgba(255,100,60,1);"><i class="far fa-spinner-third fa-spin"></i> Checking</span></button>
+                <button><span style="color:rgba(150,255,50,1);"><i class="fal fa-check-circle"></i> Completed</span></button>
+              </div>
+            </div>
+            
+          </td>
+        </tr>
+        </table>
+        <div id="support-chat">
+          <div id="chat-content">
+            <table id="chat-items">
+              <tr class="chat-item"><td><span class="your-chat-item">You:</span> How can I be of help?</td></tr>
+              
+              <tr class="chat-item"><td><span>Wiraf:</span> Εχω κολλησει μεσα στο αμαξι</td></tr>
+              <tr class="chat-item"><td><span>Wiraf:</span> δεν μπορω να βγω ελα γρηγορα</td></tr>
+              <tr class="chat-item"><td><span class="your-chat-item">You:</span> Ωραια, ερχομαι να το φτιαξω</td></tr>
+              <tr class="chat-item"><td><span>Wiraf:</span> Αντε γρηγορα εχει pubg</td></tr>
+              <tr class="chat-item"><td><span>Wiraf:</span> Αντε γρηγορα εχει pubg</td></tr>
+              <tr class="chat-item"><td><span>Wiraf:</span> Αντε γρηγορα εχει pubg</td></tr>
+              <tr class="chat-item"><td><span>Wiraf:</span> Αντε γρηγορα εχει pubg</td></tr>
+              <tr class="chat-item"><td><span>Wiraf:</span> Αντε γρηγορα εχει pubg</td></tr>
+            </table>
+            
+          </div>
+          <input id="type-support-message" type="text" required>
+          <button id="btn-send-message"><i class="fas fa-paper-plane"></i></button>
+        </div>
+        
+        
+      </div>
+      
+      <div class="right-side">
+        <div id="report-title"><div id="subtitle">Report Title</div>Χαλασε το αμαξι μου</div>
+        <div id="report-description">
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+        </div>
+        
+        <div id = "tab" class="tab" style="display:block">
+          
+        </div>
+        
+        <div id="actions" class="tabcontent" style="display:block">
+          <button class="staff-action"><i class="fas fa-medkit"></i> Heal</button>
+          <button class="staff-action"><i class="fas fa-arrow-alt-from-bottom"></i> Go To</button>
+          <button class="staff-action"><i class="fas fa-arrow-alt-from-top"></i> Bring</button>
+          <button class="staff-action"><i class="fas fa-eye"></i> Spectate</button>
+          <div class="staff-input"><input type="number"><button>Give Money</button></div>
+        </div>
+
+        <div id="logs" class="tabcontent">
+          <table>
+          </table>
+        </div>
+
+        <div id="join-leave" class="tabcontent">
+          <table>
+          </table>
+        </div>
+      </div>
+    </div>
+      <!-- <section class="chatbox">
+        <section class="chat-window">
+          <article class="msg-container msg-remote">
+            <div class="msg-box">
+              <img class="user-img" src="https://media.discordapp.net/attachments/1163225903950745600/1177023459872747570/logo.png?ex=6570ff84&is=655e8a84&hm=33edb5ca714819a2b6cb2783f86858700cafc48b20c503e442dee3b99528b039&=&format=webp&width=593&height=677" />
+              <div class="flr">
+                <div class="messages">
+                  <p class="msg">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius, neque non tristique tincidunt, mauris nunc efficitur erat, elementum semper justo odio id nisi.
+                  </p>
+                </div>
+                <span class="timestamp"><span class="username">RiderCool</span>&bull;<span class="posttime">3 minutes</span></span>
+              </div>
+            </div>
+          </article>
+          <article class="msg-container msg-self">
+            <div class="msg-box">
+              <div class="flr">
+                <div class="messages">
+                  <p class="msg">
+                    Lorem ipsum dolor sit amet
+                  </p>
+                  <p class="msg" id="msg-2">
+                    Praesent varius
+                  </p>
+                </div>
+                <span class="timestamp"><span class="username">Nokiki</span>&bull;<span class="posttime">2 minutes</span></span>
+              </div>
+              <img class="user-img" src="https://media.discordapp.net/attachments/1163225903950745600/1177023652810719292/200x200.png?ex=6570ffb2&is=655e8ab2&hm=03c26941d0f56ba68c943871f9375985457e75d2bedad952027c097ded0d0183&=&format=webp" />
+            </div>
+          </article>
+          <article class="msg-container msg-remote">
+            <div class="msg-box">
+              <img class="user-img" src="https://media.discordapp.net/attachments/1163225903950745600/1177023459872747570/logo.png?ex=6570ff84&is=655e8a84&hm=33edb5ca714819a2b6cb2783f86858700cafc48b20c503e442dee3b99528b039&=&format=webp&width=593&height=677" />
+              <div class="flr">
+                <div class="messages">
+                  <p class="msg">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+                <span class="timestamp"><span class="username">RiderCool</span>&bull;<span class="posttime">1 minute</span></span>
+              </div>
+            </div>
+          </article>
+
+        </section>
+        <form class="chat-input" onsubmit="return false;">
+          <input type="text" autocomplete="on" placeholder="Votre message" />
+          <button>
+              <svg style="width:24px;height:24px" viewBox="0 0 24 24"><path fill="rgba(0,0,0,.38)" d="M17,12L12,17V14H8V10H12V7L17,12M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5M12,4.15L5,8.09V15.91L12,19.85L19,15.91V8.09L12,4.15Z" /></svg>
+          </button>
+        </form>
+      </section> -->
     </div>
 
 </body>
